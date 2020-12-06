@@ -112,7 +112,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy-heroku-circle-ci
 
 workflows:
   version: 2
@@ -130,6 +130,7 @@ workflows:
             branches:
               only:
                 - master
+                - deploy-heroku-circle-ci
       - section_10_deploy_to_heroku:
           requires:
             - train_and_upload_regression_model
@@ -137,3 +138,4 @@ workflows:
             branches:
               only:
                 - master
+                - deploy-heroku-circle-ci
