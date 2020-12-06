@@ -150,6 +150,7 @@ workflows:
             branches:
               only:
                 - master
+                - 11.5-heroku-docker-push
       # - section_10_deploy_to_heroku:
       #     requires:
       #       - train_and_upload_regression_model
@@ -164,3 +165,4 @@ workflows:
             branches:
               only:
                 - master
+                - 11.5-heroku-docker-push
